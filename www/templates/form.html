@@ -1,0 +1,30 @@
+<form name="convertForm" ng-submit="submit()">
+  <div class="row">
+    <div class="col col-33">
+      <label for="originSelect">From</label>
+    </div>
+    <div class="col col-67">
+      <select name="originSelect" ng-model="data.base" class="ion-input-select">
+        <option ng-repeat="option in data.currOptions" ng-value="option">{{option}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col col-33">
+      <label for="targetSelect">To</label>
+    </div>
+    <div class="col col-67">
+      <select name="targetSelect" ng-model="data.symbols" class="ion-input-select">
+        <option ng-repeat="option in data.currOptions" ng-value="option">{{option}}</option>
+      </select>
+    </div>
+  </div>
+  <label class="item item-input margin-top-20">
+    <input name="amount" placeholder="Enter amount" ng-model="data.amount" type="number" min="0" step=".01">
+    <span ng-bind="data.base" class="input-label"></span>
+  </label>
+  <input class="button button-block button-positive" type="submit" name="submit" value="Equals">
+</form>
+<div class="item row result-box">
+  <div ng-bind="result.amount | number: 2" class="col col-67"></div><div ng-bind="data.symbols" class="col col-33"></div>
+</div>
