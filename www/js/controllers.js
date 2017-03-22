@@ -15,7 +15,6 @@ angular.module('currerter')
     dataService.getAmount(params).then(function(res){
       $scope.result = res.data;
       $ionicLoading.hide();
-      //console.log($scope.result);
     });
   }
 }]);
